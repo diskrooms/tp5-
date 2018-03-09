@@ -1,6 +1,8 @@
 <?php
 namespace app\index\controller;
 
+use think\Request;
+
 class Index
 {
     public function index()
@@ -9,10 +11,14 @@ class Index
     }
 	
 	public function test_exception(){
-		try{
+		/*try{
 			throw new \Exception('abc');
 		} catch (\Exception $e){
 			echo $e->getMessage();
-		}
+		}*/
+		$request = Request::instance();
+
+		$request->domain();
+		
 	}
 }
